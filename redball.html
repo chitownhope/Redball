@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <title>alert</title>
 	<script src="main.js"></script>
-  </head>
+    <style>
+		div {overflow-x: hidden;
+			 overflow-y: hidden;
+}
+		img {overflow:hidden;}
+	</style> 
+ </head>
   <body>
     <!-- <p>hello there!  You are about to get an alert! Press the button.</p>
     <button onclick="alertFunction()">Alert</button><br><br> -->
@@ -21,9 +27,9 @@
 	<button onClick="triangle()">triangle</button>
 	<button onClick="octagon()">octagon</button>
 	<button onClick="bounce()">bounce</button>
-	
-  <img id="redball" src="http://storage.googleapis.com/ics-redball/redball.jpg" alt="redball">
-
+	<div>
+		<img id="redball" src="http://storage.googleapis.com/ics-redball/redball.jpg" alt="redball">
+	</div>
 <script>
       // function alertFunction(){
       //   alert("hello there you!! you have been alerted!!");
@@ -41,14 +47,27 @@
 }
 
 	function right(){
-    redball.left = redball.left + 5;
+		var w =window.innerWidth;
+		if(redball.left < w -5 -100){
+			for(var i=0; i <10;i++){
+				 redball.left = redball.left + 5;
+			}
+			else {
+				for(var i=0; i <10;i++){
+				 redball.left = redball.left - 5;
+			}
+}
+}
+
+   
+ 
 }
 
 function rightUp(){
 	
 	redball.top = redball.top - 5;
 	redball.left = redball.left + 5;
-	}
+}
 
 
 function rightDown(){
@@ -126,13 +145,14 @@ rightUp();
 }
 
 function bounce(){
-	
-		for(i=0;i<5;i++){
+	for(i=0;i<5;i++){
 		rightUp();
 		}
-		for(i=0;i<5;i++){
+	for(i=0;i<5;i++){
 		rightDown();
 		}
+	}
+	
 	
 }
 </script>
