@@ -41,27 +41,27 @@
 	  
 	   function leftSide(){
         while(redball.left>=0) {
-            redball.left = redball.left-10
+            redball.left = redball.left-5;
         }
     }
     
         function rightSide(){
         var w = window.innerWidth;
         while(redball.left<=w-100) {
-            redball.left = redball.left+10
+            redball.left = redball.left+5;
         }
     }
 
         function topSide(){
         while(redball.top>=0) {
-            redball.top=redball.top-10;
+            redball.top=redball.top-5;
         }   
     }
         
         function bottomSide(){
         var h = window.innerHeight;
         while(redball.top<=h-100) {
-            redball.top=redball.top+10;    
+            redball.top=redball.top+5;    
         }
     }
 	
