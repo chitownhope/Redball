@@ -27,6 +27,10 @@
 	<button onClick="triangle()">triangle</button>
 	<button onClick="octagon()">octagon</button>
 	<button onClick="bounce()">bounce</button>
+	<button onClick="leftSide()">left Side</button>
+	<button onClick="rightSide()">right Side</button>
+	<button onClick="topSide()">top Side</button>
+	<button onClick="bottomSide()">bottom Side</button>
 	<div>
 		<img id="redball" src="http://storage.googleapis.com/ics-redball/redball.jpg" alt="redball">
 	</div>
@@ -34,6 +38,33 @@
       // function alertFunction(){
       //   alert("hello there you!! you have been alerted!!");
       // }
+	  
+	   function leftSide(){
+        while(redball.left>=0) {
+            redball.left = redball.left-10
+        }
+    }
+    
+        function rightSide(){
+        var w = window.innerWidth;
+        while(redball.left<=w-100) {
+            redball.left = redball.left+10
+        }
+    }
+
+        function topSide(){
+        while(redball.top>=0) {
+            redball.top=redball.top-10;
+        }   
+    }
+        
+        function bottomSide(){
+        var h = window.innerHeight;
+        while(redball.top<=h-100) {
+            redball.top=redball.top+10;    
+        }
+    }
+	
 	function down(){
     redball.top = redball.top + 5;
 }
@@ -47,21 +78,8 @@
 }
 
 	function right(){
-		var w =window.innerWidth;
-		if(redball.left < w -5 -100){
-			for(var i=0; i <10;i++){
-				 redball.left = redball.left + 5;
-			}
-			else {
-				for(var i=0; i <10;i++){
-				 redball.left = redball.left - 5;
-			}
-}
-}
-
-   
- 
-}
+    redball.left = redball.left + 5;
+}	
 
 function rightUp(){
 	
@@ -154,7 +172,7 @@ function bounce(){
 	}
 	
 	
-}
+
 </script>
   </body>
 </html>
